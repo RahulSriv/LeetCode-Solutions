@@ -1,17 +1,47 @@
 class Solution {
-   
+    
+    private Set<Integer> colIndex = new HashSet<Integer>();
+    private Set<Integer> degree45 = new HashSet<Integer>();
+    private Set<Integer> degree135 = new HashSet<Integer>();
+    
+    private int count = 0;
+    
     public int totalNQueens(int n) {
-        switch(n) {
-            case 1: return 1;
-            case 2:
-            case 3: return 0;
-            case 4: return 2;
-            case 5: return 10;
-            case 6: return 4;   
-            case 7: return 40;
-            case 8: return 92;
-            case 9: return 352;    
+        validCounter(n,0);
+        return count;
+    }
+    
+    public void validCounter(int n, int row)
+    {
+        if(row == n)
+        {
+            count++;
+            return;
         }
-        throw new IllegalArgumentException("Invalid");
+        else
+        {
+            for(int col=0;col<n;col++)
+            {
+                if(validPosition(row,col))
+                {
+                    colIndex.add(col);
+                    degree135.add(row-col);
+                    degree45.add(row+col);
+                    
+                    validCounter(n,row+1);  //recursive calling
+                    
+                    colIndex.remove(col);
+                    degree135.remove(row-col);
+                    degree45.remove(row+col);
+                }
+            }
+        }
+    }
+    private boolean validPosition(int row,int col)
+    {
+        if(colIndex.contains(col) || degree135.contains(row-col) || degree45.contains(row+col))
+            return false;
+        else
+            return true;
     }
 }
