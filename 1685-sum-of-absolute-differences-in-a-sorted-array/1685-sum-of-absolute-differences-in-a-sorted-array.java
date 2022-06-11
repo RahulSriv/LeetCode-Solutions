@@ -13,8 +13,6 @@ class Solution {
         for(i=1;i<n;i++){
             res[i]=i*nums[i]-presum[i-1]-((n-1-i)*nums[i])+(presum[n-1]-presum[i]);
         }
-        // System.out.println(n+" "+nums[n-1]+" "+presum[n-1]);
-        // res[n-1]=n*nums[n-1]-presum[n-1]; 
         return res;
     }
 }
