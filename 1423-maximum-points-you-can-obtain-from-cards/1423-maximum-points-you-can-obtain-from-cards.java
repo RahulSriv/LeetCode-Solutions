@@ -6,9 +6,7 @@ class Solution {
         i--;
         max=Math.max(sum,max);
         while(i>=0){
-            sum=sum-cardPoints[i]+cardPoints[j];
-            i--;
-            j--;
+            sum=sum-cardPoints[i--]+cardPoints[j--];
             max=Math.max(sum,max);
         }
         return max;
