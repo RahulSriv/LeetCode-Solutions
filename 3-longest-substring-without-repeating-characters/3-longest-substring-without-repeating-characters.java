@@ -9,7 +9,8 @@ class Solution {
                 max=Math.max(max,j-i);
             }
             else{
-                set.remove(s.charAt(i++));
+                set.remove(s.charAt(i));
+                i++;
             }
         }
         return max;
