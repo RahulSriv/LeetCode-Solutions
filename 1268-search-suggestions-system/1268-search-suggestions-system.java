@@ -5,7 +5,6 @@ class Solution {
         for(int i=0;i<searchWord.length();i++){
             char c=searchWord.charAt(i);
             s=s+String.valueOf(c);
-            System.out.println(s);
             ArrayList<String> sl=new ArrayList<String>();
             Arrays.sort(products);
             for(int j=0;j<products.length;j++){
@@ -13,7 +12,6 @@ class Solution {
                 if(sl.size()<3 && t.startsWith(s))
                     sl.add(t);
             }
-            System.out.println(sl);
             res.add(new ArrayList<String>(sl));
             sl.clear();
         }
