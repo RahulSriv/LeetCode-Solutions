@@ -29,18 +29,22 @@ class GFG
 
 class Solution
 {
+    private List<String> al=new ArrayList<String>();
+    
+    public void getSubSequence(String res, String s){
+        if(s.isEmpty()){
+            if(!res.isEmpty())    
+                al.add(res);
+            return ;
+        }
+        getSubSequence(res+s.charAt(0),s.substring(1));
+        getSubSequence(res,s.substring(1));
+    }
+    
     public List<String> AllPossibleStrings(String s)
     {
-        List<String> res=new ArrayList<String>();
-        for(int i=1;i< 1<<s.length();i++){
-            String sub="";
-            for(int j=0;j<s.length();j++){
-                if((i&(1<<j))!=0)
-                    sub=sub+s.charAt(j);
-            }
-            res.add(sub);
-        }
-        Collections.sort(res);
-        return res;
+        getSubSequence("",s);
+        Collections.sort(al);
+        return al;
     }
 }
