@@ -8,7 +8,6 @@ class Solution {
                 min=i;
         }
         int ct=n;
-        System.out.print(min+" "+max);
         if(max<min){
             ct=Math.min(min+1,n-max);
             ct=Math.min(ct,max+1+n-min);
