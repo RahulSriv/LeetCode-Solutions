@@ -33,11 +33,10 @@ class Solution
     public List<String> getSubSequences(String op, String ip){
         if(ip.length()==0){
            a.add(op);
+           return a;
         }
-        else { 
-            getSubSequences(op+ip.charAt(0),ip.substring(1));
-            getSubSequences(op,ip.substring(1));
-        }
+        getSubSequences(op+ip.charAt(0),ip.substring(1));
+        getSubSequences(op,ip.substring(1));
         return a;
     }
     public List<String> AllPossibleStrings(String s)
