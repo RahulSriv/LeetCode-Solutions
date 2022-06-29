@@ -3,9 +3,8 @@ class Solution {
     public List<String> getCombinations(String r, String s){
         if(s.length()==0){
             res.add(r);
-            return null;
         }
-        if(s.charAt(0)>='0' && s.charAt(0)<='9'){
+        else if(s.charAt(0)>='0' && s.charAt(0)<='9'){
             char z=s.charAt(0);
             getCombinations(r+z,s.substring(1));
         }
