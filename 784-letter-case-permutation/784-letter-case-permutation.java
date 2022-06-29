@@ -1,7 +1,7 @@
 class Solution {
     public List<String> res=new ArrayList<String>();
     public List<String> getCombinations(String r, String s, int ind){
-        if(r.length()==s.length()){
+        if(ind==s.length()){
             res.add(r);
             return null;
         }
