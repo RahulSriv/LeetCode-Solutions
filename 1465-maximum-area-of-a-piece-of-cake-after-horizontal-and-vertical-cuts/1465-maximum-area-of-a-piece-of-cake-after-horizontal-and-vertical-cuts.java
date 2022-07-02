@@ -15,6 +15,6 @@ class Solution {
             maxWidth=Math.max(maxWidth, diff);
         }
         long ans=1L*maxHeight*maxWidth;
-        return  (int)(ans%1000000007);
+        return (int)(ans%1000000007);
     }
 }
