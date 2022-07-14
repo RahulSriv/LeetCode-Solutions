@@ -13,7 +13,7 @@ class Solution {
         ListNode res=new ListNode(0);
         ListNode head=res;
         int c=0;
-        while(l1!=null || l2!=null){
+        while(l1!=null || l2!=null || c==1){
             int x = (l1==null?0:l1.val) + (l2==null?0:l2.val) + c;
             if(x>9){
                 c=1;
@@ -28,8 +28,8 @@ class Solution {
             if(l2!=null)
                 l2=l2.next;
         }
-        if(c==1)
-            res.next=new ListNode(c);
+        // if(c==1)
+        //     res.next=new ListNode(c);
         return head.next;
     }
 }
