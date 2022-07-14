@@ -28,8 +28,6 @@ class Solution {
             if(l2!=null)
                 l2=l2.next;
         }
-        // if(c==1)
-        //     res.next=new ListNode(c);
         return head.next;
     }
 }
