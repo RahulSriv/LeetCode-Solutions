@@ -15,13 +15,8 @@ class Solution {
         int c=0;
         while(l1!=null || l2!=null || c==1){
             int x = (l1==null?0:l1.val) + (l2==null?0:l2.val) + c;
-            if(x>9){
-                c=1;
-                x%=10;
-            }
-            else
-                c=0;
-            res.next=new ListNode(x);
+            c=x/10;
+            res.next=new ListNode(x%10);
             res=res.next;
             if(l1!=null)
                 l1=l1.next;
