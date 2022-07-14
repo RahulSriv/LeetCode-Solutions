@@ -20,8 +20,7 @@ class Solution {
         if(left>right)
             return null;
         int r=postorder[idx];
-        if(idx>0)
-            idx--;
+        idx--;
         TreeNode root=new TreeNode(r);
         root.right=arrayToTree(postorder,m.get(r)+1,right);
         root.left=arrayToTree(postorder,left,m.get(r)-1);
