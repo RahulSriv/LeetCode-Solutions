@@ -5,14 +5,10 @@ class Solution {
         int[] left=new int[n1];
         int[] right=new int[n2];
         int i=0,j=0;
-        while(i<n1){
-            left[i]=nums[l+i];
-            i++;
-        }
-        while(j<n2){
-            right[j]=nums[m+1+j];
-            j++;
-        }
+        while(i<n1)
+            left[i]=nums[l+i++];
+        while(j<n2)
+            right[j]=nums[m+1+j++];
         i=0;
         j=0;
         int k=l;
@@ -28,12 +24,13 @@ class Solution {
             nums[k++]=right[j++];
     }
     public void sort(int[] nums, int l, int r){
-        if(l<r){
-            int m=l+(r-l)/2;
-            sort(nums,l,m);
-            sort(nums,m+1,r);
-            merge(nums,l,m,r);
+        if(l>=r){
+            return ;
         }
+        int m=l+(r-l)/2;
+        sort(nums,l,m);
+        sort(nums,m+1,r);
+        merge(nums,l,m,r);
     }
     public int[] sortArray(int[] nums) {
         sort(nums,0,nums.length-1); 
