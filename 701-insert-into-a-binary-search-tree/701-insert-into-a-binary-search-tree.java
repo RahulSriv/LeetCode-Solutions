@@ -14,17 +14,13 @@
  * }
  */
 class Solution {
-    public TreeNode insert(TreeNode root, int val){
+    public TreeNode insertIntoBST(TreeNode root, int val) {
         if(root==null)
             root=new TreeNode(val);
         else if(root.val<val)
-            root.right=insert(root.right,val);
+            root.right=insertIntoBST(root.right,val);
         else if(root.val>val)
-            root.left=insert(root.left,val);
-        return root;
-    }
-    public TreeNode insertIntoBST(TreeNode root, int val) {
-        root=insert(root, val);
+            root.left=insertIntoBST(root.left,val);
         return root;
     }
 }
