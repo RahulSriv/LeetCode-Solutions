@@ -14,28 +14,23 @@
  * }
  */
 class Solution {
-    Deque<TreeNode> q=new ArrayDeque<>(); 
-    public void preorder(TreeNode root){
-        if(root!=null){
-            q.add(root);
-            preorder(root.left);
-            preorder(root.right);   
+    List<Integer> al=new ArrayList<>();
+    public void flatten(TreeNode root) {
+        if(root==null) 
+            return;
+        preorder(root);
+        TreeNode tmp=root;
+        for(int i=1;i<al.size();i++){
+            tmp.left=null;
+            tmp.right=new TreeNode(al.get(i));
+            tmp=tmp.right;
         }
     }
-    public void flatten(TreeNode root) {
-        preorder(root);
-        if(root==null || q.size()==1)   
-            return;
-        if(!q.isEmpty()){
-            root=q.removeFirst();
-            root.left=null;
-            TreeNode tmp=root;
-            while(!q.isEmpty()){
-                TreeNode node=q.removeFirst();
-                node.left=null;
-                tmp.right=node;
-                tmp=tmp.right;
-            }
+    public void preorder(TreeNode root){
+        if(root!=null){
+            al.add(root.val);
+            preorder(root.left);
+            preorder(root.right);
         }
     }
 }
