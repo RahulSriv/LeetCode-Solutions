@@ -14,20 +14,17 @@
  * }
  */
 class Solution {
-    public List<Integer> res=new ArrayList<Integer>();
-    
-    public void getView(TreeNode root, int depth){
+    public List<Integer> res=new ArrayList<>();
+    public void getView(TreeNode root, int level){
         if(root==null)
-            return ;
-        if(res.size()==depth){
+            return;
+        if(res.size()==level)
             res.add(root.val);
-        }
-        getView(root.right, depth+1);
-        getView(root.left, depth+1);
+        getView(root.right,level+1);
+        getView(root.left,level+1);
     }
-    
     public List<Integer> rightSideView(TreeNode root) {
-        getView(root, 0);
+        getView(root,0);
         return res;
     }
 }
