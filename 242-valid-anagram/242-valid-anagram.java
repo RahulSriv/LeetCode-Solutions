@@ -10,8 +10,6 @@ class Solution {
         for(int i=0;i<26;i++)
             if(ct[i]!=0)
                 return false;
-            else
-                continue;
         return true;
     }
 }
