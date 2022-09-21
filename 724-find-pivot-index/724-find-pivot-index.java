@@ -3,11 +3,12 @@ class Solution {
         int totsum=0;
         for(int i=0;i<nums.length;i++)
             totsum+=nums[i];
-        int presum=0;
+        int lsum=0, rsum=totsum;
         for(int i=0;i<nums.length;i++){
-            if(presum==totsum-presum-nums[i])
+            rsum-=nums[i];
+            if(lsum==rsum)
                 return i;
-            presum+=nums[i];
+            lsum+=nums[i];
         }
         return -1;
     }
