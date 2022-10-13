@@ -20,6 +20,7 @@ class Solution {
         // O(1)
         ListNode tmp=node.next;
         node.val=tmp.val;
-        node.next=tmp.next;        
+        node.next=tmp.next;  
+        
     }
 }
