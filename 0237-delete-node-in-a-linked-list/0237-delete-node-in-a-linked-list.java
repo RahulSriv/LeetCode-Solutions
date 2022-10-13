@@ -8,11 +8,20 @@
  */
 class Solution {
     public void deleteNode(ListNode node) {
-        while(node.next.next!=null){
-            node.val=node.next.val;
-            node=node.next;
-        }
-        node.val=node.next.val;
-        node.next=null;
+        
+        // Iterative O(n)
+        // while(node.next.next!=null){
+        //     node.val=node.next.val;
+        //     node=node.next;
+        // }
+        // node.val=node.next.val;
+        // node.next=null;
+        
+        // O(1)
+        ListNode tmp=node.next;
+        node.val=tmp.val;
+        node.next=tmp.next;
+        
+        
     }
 }
