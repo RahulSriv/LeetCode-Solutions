@@ -9,10 +9,11 @@ class Solution {
         return sum;
     }
     public boolean isHappy(int n) {
-        if(n==1111111)
-            return true;
+        Set<Integer> s=new HashSet<>();
         int t=getSum(n);
-        while(t>=10){
+        s.add(n);
+        while(t!=1 && !s.contains(t)){
+            s.add(t);
             t=getSum(t);
         }
         if(t==1)
