@@ -14,8 +14,6 @@ class Solution {
             s.add(t);
             t=getSum(t);
         }
-        if(t==1)
-            return true;
-        return false;
+        return t==1;
     }
 }
