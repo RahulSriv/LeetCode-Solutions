@@ -8,10 +8,8 @@ class Solution {
         }
         return sum;
     }
-    public boolean isHappy(int n) {
+    public boolean isHappy(int t) {
         Set<Integer> s=new HashSet<>();
-        int t=getSum(n);
-        s.add(n);
         while(t!=1 && !s.contains(t)){
             s.add(t);
             t=getSum(t);
