@@ -1,5 +1,4 @@
 class RandomizedSet {
-
     public Set<Integer> hs;
     public RandomizedSet() {
         hs=new HashSet<Integer>();
