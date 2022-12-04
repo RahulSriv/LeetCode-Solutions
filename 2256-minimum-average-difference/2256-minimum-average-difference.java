@@ -13,7 +13,6 @@ class Solution {
             if(i<n-1)
                 rightavg/=(n-1-i);
             int avg=(int)Math.abs(leftavg-rightavg);
-            System.out.print(avg+" ");
             if(avg<minavg){
                 minavg=avg;
                 min=i;
